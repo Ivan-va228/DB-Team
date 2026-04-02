@@ -1,0 +1,9 @@
+#app {
+    color: green;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.test-class {
+    color: red;
+}
