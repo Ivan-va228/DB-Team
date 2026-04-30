@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-dark {
+    background-color: #1a1a1a; 
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.btn-dark:hover {
+    background-color: #333;
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #222; 
+}
+
+/* --- Шапка (Header) --- */
+.header {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #eaeaea; /* Легка лінія знизу */
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between; /* Розносить елементи по краях */
+    align-items: center; /* Вирівнює по вертикалі */
+}
+
+.logo img {
+    height: 40px; /* Підганяй під свій логотип */
+    display: block;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #666;
+}
+
+
+
+/* --- Секція Послуги --- */
+.services {
+    padding: 80px 0; /* Відступи зверху і знизу */
+    background-color: #fff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.section-header p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.services-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Відстань між картками */
+}
+
+.service-card {
+    border: 1px solid #777; /* Колір рамки підбери під макет */
+    border-radius: 8px;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Центрує кнопку відносно тексту по вертикалі */
+    background-color: #fff;
+}
+
+.service-content {
+    max-width: 65%; /* Обмежуємо ширину, щоб текст не видавлював кнопку */
+}
+
+.service-content h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.service-content ul {
+    list-style-type: none; /* Вбиваємо стандартні маркери списку */
+    padding: 0;
+    margin: 0;
+}
+
+.service-content ul li {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+/* --- Адаптивність (Mobile) --- */
+/* На телефонах кнопка має з'їжджати під текст, інакше все стиснеться в кашу */
+@media (max-width: 768px) {
+    .service-card {
+        flex-direction: column;
+        align-items: flex-start; /* Вирівнюємо все по лівому краю */
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .service-content {
+        max-width: 100%;
+    }
+}
+/* --- Секція "Чому обирають нас?" --- */
+.why-us {
+    background-color: #1a1a1a;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden; /* Обрізаємо фонові картинки, щоб не було горизонтального скролу */
+}
+
+/* Налаштування для круглих картинок по краях екрана */
+.bg-decor {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6; /* Щоб не відволікали від тексту */
+}
+
+.decor-top-right {
+    top: -50px;
+    right: -100px;
+    background-image: url('./images/img1.png'); /* Встав свій шлях */
+}
+
+.decor-mid-left {
+    top: 40%;
+    left: -150px;
+    background-image: url('./images/img2.png'); /* Встав свій шлях */
+}
+
+.decor-bottom-right {
+    bottom: -50px;
+    right: -100px;
+    background-image: url('./images/img3.png'); /* Встав свій шлях */
+}
+
+.relative-container {
+    position: relative;
+    z-index: 2; /* Текст має бути поверх фонових картинок */
+}
+
+.section-title.text-white {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.features-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.feature-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Магія зигзагу: якщо клас reverse, розвертаємо елементи */
+.feature-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-card {
+    width: 50%;
+    border: 1px solid #444; /* Тонка сіра рамка */
+    border-radius: 8px;
+    padding: 30px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.feature-text {
+    width: 40%;
+    color: #fff;
+}
+
+.feature-text p {
+    font-size: 16px;
+    font-style: italic; /* Курсив за макетом */
+}
+
+.feature-text.text-right {
+    text-align: right;
+}
+
+.feature-text.text-left {
+    text-align: left;
+}
+
+/* --- Футер --- */
+.footer {
+    background-color: #fff;
+    padding: 60px 0 20px;
+    color: #000;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* Перша колонка ширша за інші */
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.footer-col a {
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-col a:hover {
+    opacity: 0.6;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    font-size: 10px;
+    color: #555;
+}
+
+/* --- Адаптивність (Mobile) --- */
+@media (max-width: 768px) {
+    .feature-row, .feature-row.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-card, .feature-text {
+        width: 100%;
+    }
+
+    .feature-text.text-right, .feature-text.text-left {
+        text-align: center; /* На мобільному краще центрувати все */
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr; /* Колонки футера стають одна під одною */
+        text-align: center;
+    }
+}

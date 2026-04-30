@@ -1,0 +1,68 @@
+/* --- Сторінка: Про нас --- */
+
+.about-hero {
+    /* Фонове фото молотка судді. Зміни шлях на свій */
+    background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.1) 100%), 
+                url('./images/page1.png') center/cover no-repeat;
+    /* Висота менша, ніж на головній */
+    min-height: 50vh; 
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+
+    &-content {
+        max-width: 600px;
+        color: $c-white;
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 40px;
+        }
+
+        .hero-features {
+            list-style: none; /* Прибираємо стандартні крапки */
+            padding: 0;
+
+            li {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 15px;
+                
+                /* Додаємо кастомну риску замість маркера (опціонально, якщо захочеться дизайну) */
+                 &:before {
+                     content: '-';
+                     margin-right: 10px;
+                 }
+            }
+        }
+    }
+}
+
+.about-content {
+    background-color: $c-dark-bg; /* Темний фон #1a1a1a */
+    padding: 80px 0;
+    color: $c-white;
+
+    .text-block {
+        max-width: 800px; /* Обмежуємо ширину, щоб очі не бігали від краю до краю екрана */
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            
+            /* Останній абзац без нижнього відступу */
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .subtitle {
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+    }
+}
