@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Надійний правовий захист</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./style/style.css" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <img src="./images/logo.png" alt="Логотип"> 
+            </div>
+            
+            <nav class="nav">
+                <a href="index.html" data-link>Головна</a>
+                <a href="about.html" data-link>Про нас</a>
+                <a href="services.html" data-link>Послуги</a>
+                <a href="contacts.html" data-link>Контакти</a>
+            </nav>
+
+            <a href="consultation.html" class="btn btn-dark">Отримати консультацію</a>
+        </div>
+    </header>
+
+<main>
+<section class="consultation-form">
+    <div class="container">
+        <div class="form-wrapper">
+            <h2>Залишити заявку</h2>
+            <p>Вкажіть ваші контакти, і ми зв'яжемося з вами для уточнення деталей.</p>
+            
+            <form id="leadForm">
+                <div class="input-group">
+                    <label for="phone">Номер телефону</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+380..." required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                </div>
+                <button type="submit" class="btn btn-dark btn-full">Відправити дані</button>
+            </form>
+            <div id="responseMessage"></div>
+        </div>
+    </div>
+</section>
+
+
+   <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4>You Better Call Bogdan</h4>
+                    <p>Професійна юридична допомога для бізнесу та фізичних осіб. Захист ваших інтересів на всіх рівнях.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Навігація</h4>
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="contacts.html">Контакти</a></li>
+                        <li><a href="consultation.html">Консультація</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="services.html">Послуги</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакти</h4>
+                    <ul>
+                        <li>м. Івано-Франківськ, вул. Марійки Підгірянки 23А</li>
+                        <li>+380696969696</li>
+                        <li><a href="#">Телеграм</a></li>
+                        <li><a href="#">Вайбер</a></li>
+                        <li><a href="#">Google Map</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 YouBetterCallBogdan All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</main>
+    <script src="./js/router.js"></script>
+</body>
+</html>

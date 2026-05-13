@@ -1,0 +1,206 @@
+@use 'variables' as *;
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%), 
+                url('../images/lawyer-bg.jpg') center/cover no-repeat;
+    height: calc(100vh - 70px);
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+
+    &-content {
+        max-width: 600px;
+        color: $c-white;
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: $c-text-muted;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+    }
+}
+
+/* --- Services Section --- */
+.services {
+    padding: 80px 0;
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 32px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: $c-black;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 600;
+            color: $c-black;
+        }
+    }
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .service-card {
+        border: 1px solid #777;
+        border-radius: 8px;
+        padding: 30px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: $bp-mobile) {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+        }
+    }
+
+    .service-content {
+        max-width: 65%;
+
+        @media (max-width: $bp-mobile) {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: $c-black;
+        }
+
+        ul {
+            list-style-type: none;
+            
+            li {
+                font-size: 14px;
+                color: $c-black;
+                margin-bottom: 6px;
+                line-height: 1.4;
+            }
+        }
+    }
+}
+
+/* --- Why Us Section --- */
+.why-us {
+    background-color: $c-dark-bg;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+
+    .bg-decor {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.6;
+    }
+
+    .decor-top-right { top: -50px; right: -100px; background-image: url('../images/handshake.jpg'); }
+    .decor-mid-left { top: 40%; left: -150px; background-image: url('../images/lawyer-desk.jpg'); }
+    .decor-bottom-right { bottom: -50px; right: -100px; background-image: url('../images/writing.jpg'); }
+
+    .relative-container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-title {
+        color: $c-white;
+        text-align: center;
+        margin-bottom: 60px;
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .features-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .feature-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: $bp-mobile) {
+            flex-direction: column;
+            text-align: center;
+            
+            &.reverse {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .feature-card {
+        width: 50%;
+        border: 1px solid $c-border-dark;
+        border-radius: 8px;
+        padding: 30px;
+        color: $c-white;
+
+        @media (max-width: $bp-mobile) { width: 100%; }
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 14px;
+            color: #ddd;
+            line-height: 1.6;
+        }
+    }
+
+    .feature-text {
+        width: 40%;
+        color: $c-white;
+
+        @media (max-width: $bp-mobile) {
+            width: 100%;
+            text-align: center !important;
+        }
+
+        p {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        &.text-right { text-align: right; }
+        &.text-left { text-align: left; }
+    }
+}

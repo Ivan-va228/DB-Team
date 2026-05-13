@@ -1,0 +1,90 @@
+@use 'variables' as *;
+
+/* --- Header --- */
+.header {
+    background-color: $c-white;
+    padding: 15px 0;
+    border-bottom: 1px solid $c-border;
+
+    &-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 40px;
+        display: block;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: $c-text-main;
+        margin: 0 15px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: color 0.3s;
+
+        &:hover {
+            color: lighten($c-text-main, 20%);
+        }
+    }
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: $c-white;
+    padding: 60px 0 20px;
+    color: $c-black;
+
+    &-top {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+
+        @media (max-width: $bp-mobile) {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+    }
+
+    &-col {
+        h4 {
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style: none;
+            
+            li {
+                margin-bottom: 10px;
+                font-size: 12px;
+            }
+        }
+
+        a {
+            color: $c-black;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    &-bottom {
+        border-top: 1px solid #ccc;
+        padding-top: 20px;
+        font-size: 10px;
+        color: #555;
+    }
+}

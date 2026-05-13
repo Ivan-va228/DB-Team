@@ -1,0 +1,264 @@
+/* --- Сторінка: Про нас --- */
+@use 'variables' as *;
+.about-hero {
+    /* Фонове фото молотка судді. Зміни шлях на свій */
+    background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.1) 100%), 
+                url('../images/page1.png') center/cover no-repeat;
+    /* Висота менша, ніж на головній */
+    min-height: 50vh; 
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+
+    &-content {
+        max-width: 600px;
+        color: $c-white;
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 40px;
+        }
+
+        .hero-features {
+            list-style: none; /* Прибираємо стандартні крапки */
+            padding: 0;
+
+            li {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 15px;
+                
+                /* Додаємо кастомну риску замість маркера (опціонально, якщо захочеться дизайну) */
+                 &:before {
+                     content: '-';
+                     margin-right: 10px;
+                 }
+            }
+        }
+    }
+}
+
+.about-content {
+    background-color: $c-dark-bg; /* Темний фон #1a1a1a */
+    padding: 80px 0;
+    color: $c-white;
+
+    .text-block {
+        max-width: 800px; /* Обмежуємо ширину, щоб очі не бігали від краю до краю екрана */
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            
+            /* Останній абзац без нижнього відступу */
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .subtitle {
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+/* --- Contacts Page --- */
+
+.contacts-section {
+    padding: 40px 0 0;
+    background-color: $c-white;
+
+    .page-title {
+        font-size: 42px;
+        font-weight: 800;
+        margin-bottom: 40px;
+        color: $c-black;
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 140px;
+            height: 2px;
+            background-color: $c-black;
+            margin-top: 15px;
+        }
+    }
+}
+
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+}
+
+.map-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(10%);
+}
+
+.map-content-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    pointer-events: none;
+}
+
+.contact-card {
+    width: 340px;
+    background-color: #f4f4f4;
+    padding: 35px;
+    border-radius: 2px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    pointer-events: auto;
+
+    h2 {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 40px;
+        text-align: center;
+        color: $c-black;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .info-block {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .label {
+        font-size: 15px;
+        font-weight: 700;
+        color: $c-black;
+    }
+
+    .value {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #444;
+    }
+}
+
+.btn-full {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+/* --- Mobile --- */
+
+@media (max-width: 768px) {
+
+    .contacts-section {
+
+        .page-title {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .map-wrapper {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map-iframe {
+        height: 400px;
+    }
+
+    .map-content-container {
+        position: static;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    .contact-card {
+        width: 100%;
+        margin-top: -50px;
+        padding: 30px;
+
+        h2 {
+            font-size: 32px;
+        }
+
+        .label,
+        .value {
+            font-size: 16px;
+        }
+    }
+
+    .btn-full {
+        font-size: 20px;
+    }
+}
+.consultation-form {
+    padding: 100px 0;
+    background-color: $c-white;
+    
+    .form-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        
+        h2 { font-size: 32px; margin-bottom: 15px; font-weight: 800; }
+        p { margin-bottom: 40px; color: #666; }
+    }
+
+    .input-group {
+        text-align: left;
+        margin-bottom: 20px;
+        
+        label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px; }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+    }
+}
+.service-detail {
+    .service-item {
+        margin-bottom: 50px;
+        
+        h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: $c-black;
+        }
+
+        p, li {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        ul {
+            padding-left: 20px;
+            li { margin-bottom: 10px; }
+        }
+    }
+}
